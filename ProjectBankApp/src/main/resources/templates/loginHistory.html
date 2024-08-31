@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login History</title>
+</head>
+<body>
+    <h2>Login History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Login Time</th>
+                <th>Logout Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="history : ${loginHistory}">
+                <td th:text="${history.loginTime}"></td>
+                <td th:text="${history.logoutTime}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/home}">Back to Home</a>
+</body>
+</html>
